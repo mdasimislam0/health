@@ -1,0 +1,6 @@
+{
+  "name": "ShasthyaVault — ফ্যামিলি হেলথ ও AI ভয়েস কেয়ার",
+  "description": "বাংলায় পারিবারিক স্বাস্থ্য ভল্ট, AI প্রেসক্রিপশন স্ক্যানার, টু-ওয়ে বাংলা ভয়েস মেডিসিন কল এজেন্ট এবং ইমার্জেন্সি হেলথ কার্ড PWA।",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

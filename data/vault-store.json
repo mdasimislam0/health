@@ -1,0 +1,544 @@
+{
+  "1988269123456": {
+    "accountHolder": {
+      "name": "মোঃ রাশেদুল ইসলাম",
+      "nid": "1988269123456",
+      "phone": "01711223344"
+    },
+    "members": [
+      {
+        "id": "mem_self",
+        "name": "মোঃ রাশেদুল ইসলাম",
+        "relation": "Self",
+        "age": 38,
+        "gender": "Male",
+        "idType": "NID",
+        "idNumber": "1988269123456",
+        "bloodGroup": "AB+",
+        "allergies": [
+          "কোনো জানা ড্রাগ অ্যালার্জি নেই"
+        ],
+        "emergencyRelayMasked": "+880 18XX-XXX512",
+        "emergencyPhoneRaw": "8801819554512",
+        "erPin": "2468"
+      },
+      {
+        "id": "mem_mother",
+        "name": "আনোয়ারা বেগম",
+        "relation": "Mother",
+        "age": 64,
+        "gender": "Female",
+        "idType": "NID",
+        "idNumber": "1962441098211",
+        "bloodGroup": "B+",
+        "allergies": [
+          "Penicillin",
+          "Sulfa Drugs"
+        ],
+        "emergencyRelayMasked": "+880 17XX-XXX344",
+        "emergencyPhoneRaw": "8801711223344",
+        "erPin": "2468",
+        "avatarUrl": "/src/assets/images/avatar_elder_mother_1795272679177.jpg"
+      },
+      {
+        "id": "mem_father",
+        "name": "মোঃ করিম উদ্দিন",
+        "relation": "Father",
+        "age": 69,
+        "gender": "Male",
+        "idType": "NID",
+        "idNumber": "1957268112233",
+        "bloodGroup": "O+",
+        "allergies": [
+          "Aspirin (High Dose)"
+        ],
+        "emergencyRelayMasked": "+880 17XX-XXX344",
+        "emergencyPhoneRaw": "8801711223344",
+        "erPin": "2468",
+        "avatarUrl": "/src/assets/images/avatar_elder_father_1795272679185.jpg"
+      },
+      {
+        "id": "mem_child",
+        "name": "তাসনিম ইসলাম",
+        "relation": "Child",
+        "age": 11,
+        "gender": "Female",
+        "idType": "Birth Certificate",
+        "idNumber": "20152691044558812",
+        "bloodGroup": "B+",
+        "allergies": [
+          "Amoxicillin",
+          "Dust Mites"
+        ],
+        "emergencyRelayMasked": "+880 17XX-XXX344",
+        "emergencyPhoneRaw": "8801711223344",
+        "erPin": "2468"
+      }
+    ],
+    "prescriptions": [
+      {
+        "id": "rx_self_1",
+        "memberId": "mem_self",
+        "visitDate": "2026-11-18",
+        "doctorName": "ডা. তানভীর আহমেদ",
+        "specialty": "মেডিসিন বিশেষজ্ঞ",
+        "findings": "Mild Gastritis & Vitamin D Deficiency",
+        "medicines": [
+          {
+            "id": "med_self_1",
+            "name": "Cap. Maxpro 20 mg",
+            "dosage": "১টি ক্যাপসুল",
+            "morning": true,
+            "noon": false,
+            "night": true,
+            "mealTiming": "খাবারের ৩০ মিনিট আগে",
+            "duration": "১৪ দিন"
+          },
+          {
+            "id": "med_self_2",
+            "name": "Tab. D-Rise 2000 IU",
+            "dosage": "১টি ট্যাবলেট",
+            "morning": false,
+            "noon": true,
+            "night": false,
+            "mealTiming": "দুপুরে খাবারের পর",
+            "duration": "৩০ দিন"
+          }
+        ],
+        "suggestedTests": [
+          {
+            "id": "tst_self_1",
+            "name": "Serum Vitamin D (25-OH)"
+          }
+        ],
+        "advice": "নিয়মিত সময়ে খাবার খাবেন এবং প্রতিদিন ২০ মিনিট রোদে থাকবেন।",
+        "pages": [],
+        "createdAt": "2026-11-18T18:02:28.532Z"
+      },
+      {
+        "id": "rx_1",
+        "memberId": "mem_mother",
+        "visitDate": "2026-11-17",
+        "doctorName": "ডা. মাহমুদুল হাসান",
+        "specialty": "কার্ডিওলজি ও মেডিসিন বিশেষজ্ঞ",
+        "findings": "Essential Hypertension (BP 150/92 mmHg), Type 2 Diabetes Mellitus",
+        "medicines": [
+          {
+            "id": "med_1",
+            "name": "Tab. Bizoran 5/20 mg",
+            "dosage": "১টি ট্যাবলেট",
+            "morning": true,
+            "noon": false,
+            "night": true,
+            "mealTiming": "খাবারের পর",
+            "duration": "৩০ দিন"
+          },
+          {
+            "id": "med_2",
+            "name": "Tab. Comet 500 mg",
+            "dosage": "১টি ট্যাবলেট",
+            "morning": false,
+            "noon": true,
+            "night": true,
+            "mealTiming": "খাবারের পর",
+            "duration": "৩০ দিন"
+          },
+          {
+            "id": "med_3",
+            "name": "Tab. Sergel 20 mg",
+            "dosage": "১টি ক্যাপসুল",
+            "morning": true,
+            "noon": false,
+            "night": false,
+            "mealTiming": "খাবারের ৩০ মিনিট আগে",
+            "duration": "১৫ দিন"
+          }
+        ],
+        "suggestedTests": [
+          {
+            "id": "tst_1",
+            "name": "HbA1c (3-Month Blood Sugar)"
+          },
+          {
+            "id": "tst_2",
+            "name": "Fasting Lipid Profile"
+          },
+          {
+            "id": "tst_3",
+            "name": "Serum Creatinine"
+          }
+        ],
+        "advice": "প্রতিদিন সকালে ৩০ মিনিট হাঁটবেন, লবণ কম খাবেন এবং নিয়মিত রক্তচাপ ও সুগার মাপবেন।",
+        "pages": [
+          {
+            "id": "pg_seed_1",
+            "name": "prescription_page_1.jpg",
+            "dataUrl": "/src/assets/images/sample_prescription_doc_1795272679369.jpg"
+          }
+        ],
+        "createdAt": "2026-11-17T18:02:28.532Z"
+      },
+      {
+        "id": "rx_2",
+        "memberId": "mem_father",
+        "visitDate": "2026-11-09",
+        "doctorName": "অধ্যাপক ডা. শফিকুর রহমান",
+        "specialty": "মেডিসিন ও বক্ষব্যাধি",
+        "findings": "Mild IHD, Controlled Hypertension",
+        "medicines": [
+          {
+            "id": "med_4",
+            "name": "Tab. Osartil 50 mg",
+            "dosage": "১টি ট্যাবলেট",
+            "morning": true,
+            "noon": false,
+            "night": false,
+            "mealTiming": "খাবারের পর",
+            "duration": "চলমান"
+          },
+          {
+            "id": "med_5",
+            "name": "Tab. Atova 10 mg",
+            "dosage": "১টি ট্যাবলেট",
+            "morning": false,
+            "noon": false,
+            "night": true,
+            "mealTiming": "রাতে খাবারের পর",
+            "duration": "৩০ দিন"
+          }
+        ],
+        "suggestedTests": [
+          {
+            "id": "tst_4",
+            "name": "ECG (12 Lead)"
+          }
+        ],
+        "advice": "ধূমপান ও অতিরিক্ত চর্বিযুক্ত খাবার সম্পূর্ণ পরিহার করুন।",
+        "pages": [],
+        "createdAt": "2026-11-09T18:02:28.532Z"
+      }
+    ],
+    "labReports": [
+      {
+        "id": "rep_self_1",
+        "memberId": "mem_self",
+        "prescriptionId": "rx_self_1",
+        "suggestedTestId": "tst_self_1",
+        "testName": "Serum Vitamin D (25-OH)",
+        "reportDate": "2026-11-19",
+        "labOrDoctorName": "ল্যাবএইড ডায়াগনস্টিক, ধানমন্ডি",
+        "status": "Abnormal",
+        "findings": "Vitamin D: 18.5 ng/mL (Insufficient; optimal 30–100 ng/mL).",
+        "pages": [],
+        "createdAt": "2026-11-19T18:02:28.532Z"
+      },
+      {
+        "id": "rep_1",
+        "memberId": "mem_mother",
+        "prescriptionId": "rx_1",
+        "suggestedTestId": "tst_1",
+        "testName": "HbA1c (3-Month Blood Sugar)",
+        "reportDate": "2026-11-19",
+        "labOrDoctorName": "পপুলার ডায়াগনস্টিক সেন্টার, ধানমন্ডি",
+        "status": "Abnormal",
+        "findings": "HbA1c: 7.4% (Target < 7.0%). Mildly elevated glycemic average.",
+        "pages": [],
+        "createdAt": "2026-11-19T18:02:28.532Z"
+      },
+      {
+        "id": "rep_2",
+        "memberId": "mem_mother",
+        "testName": "Complete Blood Count (CBC)",
+        "reportDate": "2026-10-17",
+        "labOrDoctorName": "ল্যাবএইড ডায়াগনস্টিক, ঢাকা",
+        "status": "Normal",
+        "findings": "Hemoglobin 12.1 g/dL, WBC 6,800/cumm, Platelets 245,000/cumm — Normal parameters.",
+        "pages": [],
+        "createdAt": "2026-10-17T18:02:28.532Z"
+      }
+    ],
+    "symptomNotes": [
+      {
+        "id": "sym_self_1",
+        "memberId": "mem_self",
+        "text": "সন্ধ্যার পর হালকা অ্যাসিডিটি অনুভূত হয়েছে",
+        "isQuickChip": false,
+        "recordedAt": "2026-11-21T08:02:28.532Z"
+      },
+      {
+        "id": "sym_1",
+        "memberId": "mem_mother",
+        "text": "সকালে ঘুম থেকে ওঠার পর হালকা মাথা ঘোরা",
+        "isQuickChip": true,
+        "recordedAt": "2026-11-21T12:02:28.532Z"
+      }
+    ],
+    "medicineLogs": {
+      "mem_self_2026-11-21": {
+        "morning": {
+          "status": "taken",
+          "updatedAt": "2026-11-21T18:02:28.532Z"
+        },
+        "noon": {
+          "status": "taken",
+          "updatedAt": "2026-11-21T18:02:28.532Z"
+        },
+        "night": {
+          "status": "pending",
+          "updatedAt": "2026-11-21T18:02:28.532Z"
+        }
+      },
+      "mem_self_2026-11-20": {
+        "morning": {
+          "status": "taken",
+          "updatedAt": "2026-11-20T18:02:28.532Z"
+        },
+        "noon": {
+          "status": "taken",
+          "updatedAt": "2026-11-20T18:02:28.532Z"
+        },
+        "night": {
+          "status": "taken",
+          "updatedAt": "2026-11-20T18:02:28.532Z"
+        }
+      },
+      "mem_mother_2026-11-21": {
+        "morning": {
+          "status": "taken",
+          "updatedAt": "2026-11-21T18:02:28.532Z"
+        },
+        "noon": {
+          "status": "pending",
+          "updatedAt": "2026-11-21T18:02:28.532Z"
+        },
+        "night": {
+          "status": "pending",
+          "updatedAt": "2026-11-21T18:02:28.532Z"
+        }
+      },
+      "mem_mother_2026-11-20": {
+        "morning": {
+          "status": "taken",
+          "updatedAt": "2026-11-20T18:02:28.532Z"
+        },
+        "noon": {
+          "status": "snoozed",
+          "updatedAt": "2026-11-20T18:02:28.532Z"
+        },
+        "night": {
+          "status": "taken",
+          "updatedAt": "2026-11-20T18:02:28.532Z"
+        }
+      },
+      "mem_father_2026-11-21": {
+        "morning": {
+          "status": "taken",
+          "updatedAt": "2026-11-21T18:02:28.532Z"
+        },
+        "noon": {
+          "status": "pending",
+          "updatedAt": "2026-11-21T18:02:28.532Z"
+        },
+        "night": {
+          "status": "pending",
+          "updatedAt": "2026-11-21T18:02:28.532Z"
+        }
+      }
+    },
+    "callSchedules": {
+      "mem_self": {
+        "morning": {
+          "enabled": true,
+          "time": "08:00"
+        },
+        "noon": {
+          "enabled": true,
+          "time": "14:00"
+        },
+        "night": {
+          "enabled": true,
+          "time": "21:30"
+        },
+        "symptom": {
+          "enabled": true,
+          "time": "18:30"
+        }
+      },
+      "mem_mother": {
+        "morning": {
+          "enabled": true,
+          "time": "08:00"
+        },
+        "noon": {
+          "enabled": true,
+          "time": "14:00"
+        },
+        "night": {
+          "enabled": true,
+          "time": "21:30"
+        },
+        "symptom": {
+          "enabled": true,
+          "time": "18:30"
+        }
+      },
+      "mem_father": {
+        "morning": {
+          "enabled": true,
+          "time": "08:00"
+        },
+        "noon": {
+          "enabled": true,
+          "time": "14:00"
+        },
+        "night": {
+          "enabled": true,
+          "time": "21:30"
+        },
+        "symptom": {
+          "enabled": true,
+          "time": "18:30"
+        }
+      },
+      "mem_child": {
+        "morning": {
+          "enabled": false,
+          "time": "08:00"
+        },
+        "noon": {
+          "enabled": false,
+          "time": "14:00"
+        },
+        "night": {
+          "enabled": false,
+          "time": "21:00"
+        },
+        "symptom": {
+          "enabled": false,
+          "time": "18:30"
+        }
+      }
+    },
+    "consecutiveCallFailures": {},
+    "caregiverAlerts": [
+      {
+        "id": "alt_seed_1",
+        "memberId": "mem_mother",
+        "memberName": "আনোয়ারা বেগম",
+        "type": "voice_note",
+        "slot": "morning",
+        "reason": "ওষুধের বাইরে শারীরিক সমস্যার কথা জানিয়েছেন",
+        "transcript": "সকালের গ্যাস্ট্রিকের ওষুধ খেয়েছি, কিন্তু আজ সকাল থেকে একটু মাথা ঘুরছে আর বুক হালকা ভার লাগছে।",
+        "durationSeconds": 11,
+        "whatsappMessage": "স্বাস্থ্যভল্ট কেয়ারগিভার অ্যালার্ট: আনোয়ারা বেগম (মা) সকাল বেলার ভয়েস কলে ১১ সেকেন্ড কথা বলেছেন: \"সকালের গ্যাস্ট্রিকের ওষুধ খেয়েছি, কিন্তু আজ সকাল থেকে একটু মাথা ঘুরছে আর বুক হালকা ভার লাগছে।\"",
+        "whatsappTargetPhone": "8801711223344",
+        "createdAt": "2026-11-21T13:02:28.532Z",
+        "read": false
+      }
+    ],
+    "callReports": [
+      {
+        "id": "crep_seed_1",
+        "memberId": "mem_self",
+        "memberName": "মোঃ রাশেদুল ইসলাম",
+        "memberRelation": "Self",
+        "accountHolderName": "মোঃ রাশেদুল ইসলাম",
+        "slot": "noon",
+        "scheduledTime": "14:00",
+        "outcome": "taken",
+        "durationSeconds": 6,
+        "transcript": "হ্যাঁ, দুপুরের ওষুধ খেয়েছি।",
+        "aiReply": "ধন্যবাদ স্যার, আপনার দুপুর বেলার ওষুধ খাওয়ার তথ্য সংরক্ষণ করা হয়েছে।",
+        "createdAt": "2026-11-21T16:02:28.532Z"
+      },
+      {
+        "id": "crep_seed_2",
+        "memberId": "mem_mother",
+        "memberName": "আনোয়ারা বেগম",
+        "memberRelation": "Mother",
+        "accountHolderName": "মোঃ রাশেদুল ইসলাম",
+        "slot": "morning",
+        "scheduledTime": "08:00",
+        "outcome": "voice_note",
+        "durationSeconds": 11,
+        "transcript": "সকালের গ্যাস্ট্রিকের ওষুধ খেয়েছি, কিন্তু আজ সকাল থেকে একটু মাথা ঘুরছে আর বুক হালকা ভার লাগছে।",
+        "aiReply": "জি ম্যাডাম, আপনার সমস্যার কথা আপনার পরিবারের কেয়ারগিভারকে জানিয়ে দেওয়া হয়েছে।",
+        "createdAt": "2026-11-21T13:02:28.532Z",
+        "capturedFinding": "সকালের গ্যাস্ট্রিকের ওষুধ খেয়েছি, কিন্তু আজ সকাল থেকে একটু মাথা ঘুরছে আর বুক হালকা ভার লাগছে।"
+      },
+      {
+        "id": "crep_seed_3",
+        "memberId": "mem_father",
+        "memberName": "মোঃ করিম উদ্দিন",
+        "memberRelation": "Father",
+        "accountHolderName": "মোঃ রাশেদুল ইসলাম",
+        "slot": "morning",
+        "scheduledTime": "08:00",
+        "outcome": "taken",
+        "durationSeconds": 5,
+        "transcript": "হ্যাঁ, সকালের প্রেশারের ওষুধ খেয়েছি।",
+        "aiReply": "ধন্যবাদ স্যার, ভালো থাকবেন।",
+        "createdAt": "2026-11-21T12:02:28.532Z"
+      },
+      {
+        "id": "crep_seed_symptom_1",
+        "memberId": "mem_self",
+        "memberName": "মোঃ রাশেদুল ইসলাম",
+        "memberRelation": "Self",
+        "accountHolderName": "মোঃ রাশেদুল ইসলাম",
+        "slot": "symptom",
+        "scheduledTime": "18:30",
+        "outcome": "symptom_logged",
+        "durationSeconds": 14,
+        "transcript": "সন্ধ্যার পর থেকে হালকা অ্যাসিডিটি ও বুক জ্বালাপোড়া অনুভব করছি।",
+        "capturedFinding": "সন্ধ্যার পর হালকা অ্যাসিডিটি অনুভূত হয়েছে",
+        "aiReply": "জি স্যার, আমি আপনার অ্যাসিডিটির সমস্যার কথাটি “বর্তমান সমস্যা নোট”-এ লিখে রেখেছি এবং কেয়ারগিভারকেও জানিয়ে দিয়েছি।",
+        "createdAt": "2026-11-21T14:51:04.048Z"
+      }
+    ],
+    "activityLogs": [
+      {
+        "id": "act_self_1",
+        "memberId": "mem_self",
+        "category": "medicine",
+        "summary": "আজ দুপুর বেলার ওষুধ (Tab. D-Rise 2000 IU) খেয়েছেন ✅",
+        "timestamp": "2026-11-21T16:02:28.532Z"
+      },
+      {
+        "id": "act_self_2",
+        "memberId": "mem_self",
+        "category": "medicine",
+        "summary": "আজ সকাল বেলার ওষুধ (Cap. Maxpro 20 mg) খেয়েছেন ✅",
+        "timestamp": "2026-11-21T11:02:28.532Z"
+      },
+      {
+        "id": "act_self_3",
+        "memberId": "mem_self",
+        "category": "report",
+        "summary": "Serum Vitamin D (25-OH) রিপোর্ট যুক্ত করেছেন (Abnormal)",
+        "timestamp": "2026-11-19T18:02:28.532Z"
+      },
+      {
+        "id": "act_mother_1",
+        "memberId": "mem_mother",
+        "category": "medicine",
+        "summary": "সকাল বেলার ওষুধ খেয়েছেন ✅ (ভয়েস কল কনফার্ম)",
+        "timestamp": "2026-11-21T13:02:28.532Z"
+      },
+      {
+        "id": "act_mother_2",
+        "memberId": "mem_mother",
+        "category": "symptom",
+        "summary": "সমস্যা নোট: সকালে ঘুম থেকে ওঠার পর হালকা মাথা ঘোরা",
+        "timestamp": "2026-11-21T12:02:28.532Z"
+      },
+      {
+        "id": "act_father_1",
+        "memberId": "mem_father",
+        "category": "medicine",
+        "summary": "সকাল বেলার ওষুধ (Tab. Osartil 50 mg) খেয়েছেন ✅",
+        "timestamp": "2026-11-21T12:02:28.532Z"
+      }
+    ]
+  }
+}
