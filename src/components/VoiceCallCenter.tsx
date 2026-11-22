@@ -28,7 +28,6 @@ import type {
 
 interface VoiceCallCenterProps {
   token: string;
-  members: FamilyMember[];
   activeMember: FamilyMember;
   accountHolderName: string;
   callSchedules: Record<string, MemberCallSchedule>;
@@ -37,7 +36,6 @@ interface VoiceCallCenterProps {
   consecutiveFailures: Record<string, number>;
   unreadAlertCount: number;
   getSlotMedicines: (slot: MedicineSlot) => MedicineItem[];
-  onSelectMember: (memberId: string) => void;
   onVaultUpdated: (vault: VaultState) => void;
   onTriggerCall: (slot: CallSlot, scheduledTime?: string) => void;
   onOpenInbox: () => void;
@@ -67,7 +65,6 @@ const OUTCOME_LABEL: Record<CallReportOutcome, {text: string; cls: string}> = {
 
 export const VoiceCallCenter: React.FC<VoiceCallCenterProps> = ({
   token,
-  members,
   activeMember,
   accountHolderName,
   callSchedules,
@@ -76,7 +73,6 @@ export const VoiceCallCenter: React.FC<VoiceCallCenterProps> = ({
   consecutiveFailures,
   unreadAlertCount,
   getSlotMedicines,
-  onSelectMember,
   onVaultUpdated,
   onTriggerCall,
   onOpenInbox,
@@ -182,7 +178,7 @@ export const VoiceCallCenter: React.FC<VoiceCallCenterProps> = ({
 
   return (
     <div className="space-y-8">
-      {/* Voice Call Agent Header + Profile Switcher */}
+      {/* Voice Call Agent Header (Active Profile Only) */}
       <section className="bg-white border border-slate-200 rounded-2xl p-6 space-y-5">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
           <div>
@@ -196,24 +192,16 @@ export const VoiceCallCenter: React.FC<VoiceCallCenterProps> = ({
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2">
-            {members.map((m) => {
-              const selected = m.id === activeMember.id;
-              return (
-                <button
-                  key={m.id}
-                  type="button"
-                  onClick={() => onSelectMember(m.id)}
-                  className={`min-h-[38px] px-3 py-1.5 rounded-xl border text-xs font-semibold transition-colors whitespace-nowrap ${
-                    selected
-                      ? 'bg-teal-700 border-teal-700 text-white'
-                      : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
-                  }`}
-                >
-                  {m.relation === 'Self' ? `আমি (${m.name})` : m.name}
-                </button>
-              );
-            })}
+          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-teal-50 border border-teal-200 text-teal-900 shrink-0 self-start lg:self-center">
+            <span className="w-2.5 h-2.5 rounded-full bg-teal-600" />
+            <div>
+              <p className="text-[11px] font-semibold text-teal-700">সক্রিয় প্রোফাইল</p>
+              <p className="text-xs font-bold text-slate-900">
+                {activeMember.relation === 'Self'
+                  ? `আমি (${activeMember.name})`
+                  : activeMember.name}
+              </p>
+            </div>
           </div>
         </div>
 

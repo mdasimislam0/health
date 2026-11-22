@@ -26,7 +26,9 @@ import type {
 const PORT = 3000;
 const DATA_DIR = path.resolve(process.cwd(), 'data');
 const STORE_PATH = path.join(DATA_DIR, 'vault-store.json');
-const SESSION_SECRET = process.env.SESSION_SECRET || crypto.randomBytes(32).toString('hex');
+const SESSION_SECRET =
+  process.env.SESSION_SECRET ||
+  crypto.createHash('sha256').update(`${STORE_PATH}:shasthyavault-session-v1`).digest('hex');
 
 interface AuthenticatedRequest extends Request {
   accountId?: string;
@@ -813,6 +815,10 @@ function dataUrlToPart(dataUrlOrPath: string): {inlineData: {mimeType: string; d
 async function startServer() {
   const app = express();
   app.use(express.json({limit: '25mb'}));
+  app.use('/api', (_req: Request, res: Response, next: NextFunction) => {
+    res.setHeader('x-shasthyavault-api', '1');
+    next();
+  });
 
   // --- Auth Endpoints ---
   app.post('/api/auth/request-otp', (req: Request, res: Response) => {
@@ -875,6 +881,27 @@ async function startServer() {
     const demoNid = '1988269123456';
     const vault = getOrCreateAccountVault(store, demoNid, '01711223344');
     const token = signToken(demoNid);
+    res.json({
+      token,
+      vault: sanitizeVaultForClient(vault),
+    });
+  });
+
+  app.post('/api/auth/direct-login', (req: Request, res: Response) => {
+    const {nid, phone} = req.body as {nid?: string; phone?: string};
+    const cleanNid = (nid || '').replace(/\D/g, '') || '1988269123456';
+    const cleanPhone = (phone || '').replace(/\D/g, '') || '01711223344';
+    if (cleanNid.length < 10 || cleanNid.length > 17) {
+      res.status(400).json({error: 'সঠিক ১০, ১৩ বা ১৭ ডিজিটের জাতীয় পরিচয়পত্র নম্বর (NID) দিন।'});
+      return;
+    }
+    if (cleanPhone.length < 10) {
+      res.status(400).json({error: 'সঠিক বাংলাদেশি মোবাইল নম্বর দিন (যেমন: 017XXXXXXXX)।'});
+      return;
+    }
+    const store = readStore();
+    const vault = getOrCreateAccountVault(store, cleanNid, cleanPhone);
+    const token = signToken(cleanNid);
     res.json({
       token,
       vault: sanitizeVaultForClient(vault),

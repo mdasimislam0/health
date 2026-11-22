@@ -1,3 +1,5 @@
+import {localVaultRequest} from './localVault.ts';
+
 export class ApiError extends Error {
   status: number;
   constructor(message: string, status: number) {
@@ -14,6 +16,10 @@ export async function apiRequest<T>(
     token?: string | null;
   } = {}
 ): Promise<T> {
+  if (options.token && options.token.startsWith('local-token:')) {
+    return localVaultRequest<T>(url, options);
+  }
+
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
   };
@@ -21,17 +27,41 @@ export async function apiRequest<T>(
     headers['Authorization'] = `Bearer ${options.token}`;
   }
 
-  const res = await fetch(url, {
-    method: options.method || 'GET',
-    headers,
-    body: options.body !== undefined ? JSON.stringify(options.body) : undefined,
-  });
-
-  const data = (await res.json().catch(() => ({}))) as T & {error?: string};
-  if (!res.ok) {
-    throw new ApiError(data.error || `HTTP ${res.status}`, res.status);
+  let res: Response;
+  try {
+    res = await fetch(url, {
+      method: options.method || 'GET',
+      headers,
+      body: options.body !== undefined ? JSON.stringify(options.body) : undefined,
+    });
+  } catch {
+    return localVaultRequest<T>(url, options);
   }
-  return data;
+
+  const isExpressApi = res.headers.get('x-shasthyavault-api') === '1';
+  const contentType = res.headers.get('content-type') || '';
+
+  if (
+    !isExpressApi &&
+    (!contentType.includes('application/json') ||
+      res.status === 401 ||
+      res.status === 403 ||
+      res.status === 404 ||
+      res.status === 405 ||
+      res.status >= 500)
+  ) {
+    return localVaultRequest<T>(url, options);
+  }
+
+  const data = (await res.json().catch(() => null)) as (T & {error?: string}) | null;
+  if (!data && !isExpressApi) {
+    return localVaultRequest<T>(url, options);
+  }
+
+  if (!res.ok) {
+    throw new ApiError(data?.error || `HTTP ${res.status}`, res.status);
+  }
+  return (data || ({} as T)) as T;
 }
 
 export function fileToDataUrl(file: File): Promise<string> {

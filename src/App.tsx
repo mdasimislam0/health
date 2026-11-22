@@ -289,7 +289,6 @@ export default function App() {
         {activeTab === 'voice' && (
           <VoiceCallCenter
             token={token}
-            members={vault.members}
             activeMember={activeMember}
             accountHolderName={vault.accountHolder.name}
             callSchedules={vault.callSchedules || {}}
@@ -298,7 +297,6 @@ export default function App() {
             consecutiveFailures={vault.consecutiveCallFailures}
             unreadAlertCount={unreadAlertCount}
             getSlotMedicines={(slot) => getSlotMedicines(slot, activeMember.id)}
-            onSelectMember={setActiveMemberId}
             onVaultUpdated={setVault}
             onTriggerCall={(slot, scheduledTime) =>
               setActiveCallTarget({
